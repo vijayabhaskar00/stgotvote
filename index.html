@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+      
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vote | Prost Awards</title>
+	<link href="https://fonts.googleapis.com/css?family=Heebo:400,900|Oxygen:900" rel="stylesheet">
+	<link rel="stylesheet" href="dist/css/style.css">
+	<link rel="stylesheet" href="dist/css/core.css">
+	<script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="dist/js/angular.min.js"></script>
+	<script src="dist/js/index.js"></script>
+	<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66299251-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-66299251-1');
+</script>
+
+	<style>
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+
+<body ng-app="myApp" class="is-boxed has-animations" ng-controller="homeController">
+	<div class="body-wrap boxed-container" ng-if="input.page==1">
+		<header class="site-header text-light">
+			<div class="container">
+				<div class="site-header-inner">
+					<div class="brand header-brand">
+						<h1 class="m-0">
+							<a href="index.html">
+								<img class="header-logo-image" src="dist/images/main-logo.png" alt="Logo" width="152">
+							</a>
+						</h1>
+					</div>
+					<!-- <div class="menu"> -->
+					<!-- <ul> -->
+					<!-- <li><a href="#">Join the Crew</a></li> -->
+					<!-- <li><a href="#">underGrad Summit 22</a></li> -->
+					<!-- <li><a href="#">Contact Us</a></li> -->
+					<!-- </ul> -->
+					<!-- </div> -->
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero text-light">
+
+
+				<div class="container-lg">
+					<div class="hero-inner">
+						<div class="hero-copy">
+							<div class="text-center">
+								<h1 class="hero-title mb-5">Voting has been Opened</h1>
+								 <h3>Participate Now!</h3>
+								<p>Show off your college spirit by voting for your college today. Don't miss this chance to support your beloved institution!</p> 
+							</div>
+							<div class="col-xl">
+								<div class="card">
+									<div class="card-header d-flex justify-content-between align-items-center">
+										<div class="text-left col-xl">
+											<h4 class="mb-2">Contact details</h4>
+											<small class="text-muted mt-1">Please fill your information to
+												verify.</small>
+											<hr class="mt-2">
+										</div>
+
+									</div>
+									<div class="card-body">
+
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-fullname">Name</label>
+											<input type="text" class="form-control" id="basic-default-fullname"
+												ng-model="input.Name" placeholder="Enter Your Name">
+											<span class="error">{{errorName}}</span>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-phone">Phone Number</label>
+											<input type="text" maxlength="10" class="form-control phone-mask"
+												ng-model="input.Phone" placeholder="Enter your Mobile Number">
+											<span class="error">{{errorPhone}}</span>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-email">Email</label>
+											<input type="text" class="form-control" placeholder="Enter Your Email"
+												ng-model="input.Email" aria-label="john.doe"
+												aria-describedby="basic-default-email2">
+											<span class="error">{{errorEmail}}</span>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">College
+												Name</label>
+											<input type="text" class="form-control" ng-model="input.CollegeName"
+												placeholder="Enter your College Name">
+											<span class="error">{{errorCollegeName}}</span>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Department
+												Name</label>
+											<input type="text" class="form-control" ng-model="input.DepartmentName"
+												placeholder="Enter Your Stream/Department">
+											<span class="error">{{errorDepartmentName}}</span>
+										</div>
+
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Year of study
+											</label>
+											<select ng-model="input.StudentYear" class="form-select">
+												<option value="">Select Year</option>
+												<option>1<sup>st</sup> Year</option>
+												<option>2<sup>nd</sup> Year</option>
+												<option>3<sup>rd</sup> Year</option>
+												<option>4<sup>th</sup> Year</option>
+											</select>
+											<span class="error">{{errorStudentYear}}</span>
+										</div>
+
+									</div>
+								</div>
+								<!-- <div class="g-recaptcha" data-sitekey="6Lc4u6MkAAAAAEbgHvGeHioIbFHpLh1Tmj2V0iRk"></div> -->
+								<div class="mt-5 mb-3 text-center">
+									<button ng-click="onSubmitContact()" class="btn btn-primary">Next</button>
+								</div>
+								<div class="cta-header tcBlog text-center">
+									<h2 class="section-title mt-0">Terms & Conditions for Voting</h2>
+									<p class="section-paragraph">Winner is selected based on Voting and Jury</p>
+									<p class="section-paragraph">Nomination of each categories are finalized based on
+										the applications filled by the student or college.</p>
+									<p class="section-paragraph">Disclaimer: The organization doesn’t hold any partial
+										preference towards any category.</p>
+									<p class="section-paragraph">The jury debates and arrives at nominees and winners of
+										all the categories considering all the technicalities.</p>
+									<p class="section-paragraph"><a href="#">info@stumagz.com</a></p>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+
+	</div>
+	<div class="body-wrap boxed-container" ng-if="input.page==2">
+		<header class="site-header text-light">
+			<div class="container">
+				<div class="site-header-inner">
+					<div class="brand header-brand">
+						<h1 class="m-0">
+							<a href="index.html">
+								<img class="header-logo-image" src="dist/images/main-logo.png" alt="Logo" width="152">
+							</a>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero text-light">
+
+
+				<div class="container-lg">
+					<div class="hero-inner">
+						<div class="hero-copy">
+							<div class="text-center">
+								<h1 class="hero-title mb-5">Vote For Your College</h1>
+								<!-- <h3>Post Your Requirements</h3> -->
+								<!-- <p>Please fill the form below to receive a quote for workspace. Please add all the details required.</p> -->
+							</div>
+							<div class="col-xl">
+								<div class="card">
+									<div class="card-header d-flex justify-content-between align-items-center">
+										<div class="text-left col-xl">
+											<h4 class="mb-3">Select Your College</h4>
+											<!-- <small class="text-muted mt-1">Please fill your information to verify.</small> -->
+											<hr class="mt-2">
+										</div>
+
+									</div>
+									<div class="card-body">
+
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-fullname">Best Placement
+												Cell</label>
+											<select ng-model="input.BestPlacementCell" class="form-select">
+												<option value="">Default select</option>
+												<option>Anurag University</option>
+												<option>Mahatma Gandhi Institute of Technology</option>
+												<option>CMR Group of Institutions</option>
+												<option>G. Narayanamma Institute of 
+													Technology Science (for Women) </option>
+												<option>KL University</option>
+												<option>Sreenidhi Institute of Science and Technology
+												</option>
+												<option>CVR College of Engineering</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-phone">Best
+												E-Cell/Innovation Lab</label>
+											<select ng-model="input.BestECell" class="form-select">
+												<option value="">Default select</option>
+												<option>Vasavi College of Engineering</option>
+												<option>Vignan Institute of Technology and Science</option>
+												<option>EC,COFEE- St Francis College for Women</option>
+												<option>JNTU Hyderabad</option>
+												<option>Geethanjali College of Engineering 
+													and Technology
+													</option>
+													<option>G. Narayanamma Institute of 
+														Technology Science (for Women)</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-email">Best College In
+												Sports</label>
+											<div class="input-group input-group-merge">
+												<select ng-model="input.BestSportsCollege" class="form-select">
+													<option value="">Default select</option>
+													<option>MLR Institute of Technology</option>
+													<option>Vaagdevi College of Engineering</option>
+													<option>Nalla Malla Reddy Engineering 
+														College</option>
+													<option>CSI Wesley Institute of 
+														Technology and Sciences </option>
+													<option>Kommuri Pratap Reddy Institute of 
+														Technology </option>
+														<option>TKR Group of Institutions</option>
+														<option>St.Martin's Engineering College</option>
+												</select>
+												<!-- <span class="input-group-text" id="basic-default-email2">@example.com</span> -->
+											</div>
+											<!-- <div class="form-text"> You can use letters, numbers &amp; periods </div> -->
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Best College in Co Curriculars</label>
+											<select ng-model="input.BestCollegeinCocurriculars" class="form-select">
+												<option value="">Default select</option>
+												<option>SR UNIVERSITY</option>
+												<option>EC,COFEE- St Francis College for Women</option>
+												<option>VNR Vignana Jyothi Institute of 
+													Engineering &Technology
+													</option>
+												<option>St.Peter's Engineering College</option>
+												<option>Avinash College of Commerce</option>
+												<option>Nalla Narasimha Reddy Education 
+													Society’s Group of Institutions </option>
+													<option>Methodist College of Engineering 
+														& Technology</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Best Emerging
+												College</label>
+											<select ng-model="input.BestEmergingCollege" class="form-select">
+												<option value="">Default select</option>
+												<option>Neil Gogte Institute of Technology </option>
+												<option>Roots Collegium</option>
+												<option>KG Reddy College of Engineering 
+													and Technology</option>
+												<option>Mahindra University</option>
+												<option>Malla Reddy University</option>
+												<option>BVRIT Hyderabad College of 
+													Engineering for Women</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Best
+												Infrastructure Award</label>
+											<select ng-model="input.BestInfrastructure" class="form-select">
+												<option value="">Default select</option>
+												<option>CMR Group of Institutions</option>
+												<option>Woxsen University</option>
+												<option>Geethanjali College of Engineering 
+													and Technology</option>
+												<option>KL University</option>
+												<option>Sreenidhi Institute of Science and Technology</option>
+												<option>MLR Institute of Technology</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Best Eco-Friendly
+												College</label>
+											<select ng-model="input.BestEcoFriendlyCollege" class="form-select">
+												<option value="">Default select</option>
+												<option>Hyderabad Institute of Technology 
+													and Management </option>
+												<option>Vignan Institute of Technology and Science</option>
+												<option>KG Reddy College of Engineering 
+													and Technology</option>
+												<option>Osmania University</option>
+												<option>JNTU Hyderabad</option>
+												<option>Vaagdevi College of Engineering</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Best College in
+												R&D</label>
+											<select ng-model="input.BestRAndDCollege" class="form-select">
+												<option value="">Default select</option>
+												<option>Vardhaman College of 
+													Engineering</option>
+												<option>Guru Nanak Institutions</option>
+												<option>GRIET</option>
+												<option>Institute of Aeronautical Engineering</option>
+												<option>VNR Vignana Jyothi Institute of</option>
+												<option>B V Raju Institute of Technology</option>
+												<option>Stanley College of Engineering 
+													and Technology for Women</option>
+											</select>
+										</div>
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-company">Best Participation
+												in Events</label>
+											<select ng-model="input.BestParticipationInEvents" class="form-select">
+												<option value="">Default select</option>
+												<option>Anurag University</option>
+												<option>Malla Reddy College of 
+													Engineering and Technology </option>
+												<option>St. Peter's Engineering College </option>
+												<option>Institute of Aeronautical Engineering </option>
+												<option>Vignana Bharathi Institue of Technology</option>
+												<option>Sri Indu College of Engineering & 
+													Technology</option>
+													<option>Vignan's Institute of Management 
+														and Technology for Women
+														</option>
+											</select>
+											<span class="error">{{errorBest}}</span>
+										</div>
+
+
+									</div>
+								</div>
+								<div class="mt-5 mb-3 text-center">
+									<button class="btn btn-primary" ng-click="onSubmitVote()">Submit</button>
+								
+								</div>
+								<div class="cta-header tcBlog text-center">
+									<h2 class="section-title mt-0">Terms & Conditions for Voting</h2>
+									<p class="section-paragraph">Winner is selected based on Voting and Jury</p>
+									<p class="section-paragraph">Nomination of each categories are finalized based on
+										the applications filled by the student or college.</p>
+									<p class="section-paragraph">Disclaimer: The organization doesn’t hold any partial
+										preference towards any category.</p>
+									<p class="section-paragraph">The jury debates and arrives at nominees and winners of
+										all the categories considering all the technicalities.</p>
+									<p class="section-paragraph"><a href="#">info@stumagz.com</a></p>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+
+	</div>
+	<div class="body-wrap boxed-container" ng-if="input.page==3">
+		<header class="site-header text-light">
+			<div class="container">
+				<div class="site-header-inner">
+					<div class="brand header-brand">
+						<h1 class="m-0">
+							<a href="index.html">
+								<img class="header-logo-image" src="dist/images/main-logo.png" alt="Logo" width="152">
+							</a>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero text-light">
+
+
+				<div class="container-lg">
+					<div class="hero-inner">
+						<div class="hero-copy">
+							<div class="text-center">
+								<h1 class="hero-title mb-5">OTP Details</h1>
+							</div>
+							<div class="col-xl">
+								<div class="card">
+									<div class="card-header d-flex justify-content-between align-items-center">
+										<div class="text-center col-xl">
+											<h4 class="mb-3">Enter Your OTP</h4>
+											<hr class="mt-2">
+										</div>
+
+									</div>
+									<div class="card-body">
+
+										<div class="mb-3">
+											<label class="form-label" for="basic-default-fullname">Enter Your
+												OTP</label>
+											<input type="text" ng-model="input.OTP" class="form-control" placeholder="">
+											<span class="error">{{error}}</span>
+										</div>
+
+
+									</div>
+								</div>
+								<div class="mt-5 mb-3 text-center">
+									<button class="btn btn-primary" ng-click="onSubmitOtp()">Verify</button>
+									<button class="btn btn-primary" ng-show="isResendEnable"
+									ng-click="onResendOTP()">Resend OTP</button>
+								</div>
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+
+	</div>
+	<div class="body-wrap boxed-container" ng-if="input.page==4">
+		<header class="site-header text-light">
+			<div class="container">
+				<div class="site-header-inner">
+					<div class="brand header-brand">
+						<h1 class="m-0">
+							<a href="index.html">
+								<img class="header-logo-image" src="dist/images/main-logo.png" alt="Logo" width="152">
+							</a>
+						</h1>
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero text-light">
+
+
+				<div class="container-lg">
+					<div class="hero-inner">
+						<div class="hero-copy">
+							<div class="text-center">
+								<h1 class="hero-title mb-5">Thank You</h1>
+							</div>
+							<div class="col-xl">
+								<div class="card">
+
+									<div class="card-body">
+										<form>
+											<div class="text-center col-xl">
+												<h4 class="mb-3 pt-5 pb-5">THANKS FOR VOTING</h4>
+
+											</div>
+
+
+										</form>
+									</div>
+								</div>
+								<!-- <div class="mt-5 mb-3 text-center"> -->
+								<!-- <button type="submit" class="btn btn-primary">Verify</button> -->
+								<!-- </div> -->
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+
+		</main>
+
+
+	</div>
+	<script src="dist/js/main.min.js"></script>
+</body>
+
+</html>
