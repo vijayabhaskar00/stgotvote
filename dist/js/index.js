@@ -163,8 +163,8 @@ angular.module('myApp', [])
             if ($scope.input.bcom != "")
                 counter++;
 
-            if (counter <= 3) {
-                $scope.errorBest = "Please select at least 4 categories";
+            if (counter <= 1) {
+                $scope.errorBest = "Please select at least 1 categories";
                 isvalid = false;
             }
 
